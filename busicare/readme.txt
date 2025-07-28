@@ -2,8 +2,8 @@
 
 Contributors: spicethemes
 Requires at least: 4.5
-Tested up to: 6.7
-Stable tag: 1.3.4
+Tested up to: 6.8
+Stable tag: 1.3.4.1
 Requires PHP: 5.4
 License: GNU General Public License v2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
@@ -32,6 +32,10 @@ BusiCare WordPress Theme, Copyright (C) 2021-2025, SpiceThemes
 BusiCare is WordPress Theme distributed under the terms of the GNU GPL
 
 == Changelog ==
+
+@Version 1.3.4.1
+* Corrected design of the slider contact form and search light box in PRO.
+* Updated bootstrap 5.3.6.
 
 @Version 1.3.4
 * Fixed error notice issue.

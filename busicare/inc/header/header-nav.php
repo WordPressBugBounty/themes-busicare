@@ -13,13 +13,13 @@
 			</div>
 		</div>
 
-		<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="<?php esc_attr_e('Toggle navigation', 'busicare'); ?>">
+		<button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="<?php esc_attr_e('Toggle navigation', 'busicare'); ?>">
 			<span class="navbar-toggler-icon"></span>
 		</button>
 		<div class="collapse navbar-collapse" id="navbarNavDropdown">
-			<div class="<?php echo (!is_rtl()) ? "ml-auto" : "mr-auto"; ?>">
+			<div class="<?php echo (!is_rtl()) ? "ms-auto" : "ms-auto"; ?>">
 			<?php			
-			$busicare_shop_button = '<ul class="nav navbar-nav mr-auto">%3$s';
+			$busicare_shop_button = '<ul class="nav navbar-nav me-auto">%3$s';
 			   //Hence This condition only work when woocommerce plugin will be activate
 		    if(get_theme_mod('after_menu_btn_new_tabl',false)==true) { $busicare_target="_blank";}
 		 	else { $busicare_target="_self"; }
@@ -84,7 +84,7 @@
 			    wp_nav_menu( array
 			             (
 			             'theme_location'=> 'busicare-primary', 
-			             'menu_class'    => 'nav navbar-nav mr-auto '.$busicare_menu_class.'',
+			             'menu_class'    => 'nav navbar-nav me-auto '.$busicare_menu_class.'',
 			            'items_wrap'  => $busicare_shop_button,
 			             'fallback_cb'   => 'busicare_fallback_page_menu',
 			             'walker'        => new Busicare_nav_walker()

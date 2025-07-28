@@ -4,7 +4,7 @@ function busicare_enqueue_script() {
 
     $suffix = ( defined('SCRIPT_DEBUG') && SCRIPT_DEBUG ) ? '' : '.min';
 
-    wp_enqueue_style('bootstrap', BUSICARE_TEMPLATE_DIR_URI . '/css/bootstrap' . $suffix . '.css', array(), '4.0.0');
+    wp_enqueue_style('bootstrap', BUSICARE_TEMPLATE_DIR_URI . '/css/bootstrap' . $suffix . '.css', array(), '5.3.6');
     wp_style_add_data('bootstrap', 'rtl', 'replace');
 
     wp_enqueue_style('busicare-style', get_stylesheet_uri());
@@ -28,7 +28,7 @@ function busicare_enqueue_script() {
     wp_enqueue_script('busicare-video-slider-js', BUSICARE_TEMPLATE_DIR_URI . '/js/jquery.mb.YTPlayer.js');    
    
     wp_enqueue_script('owl', BUSICARE_TEMPLATE_DIR_URI. '/js/owl.carousel' . $suffix . '.js', array('jquery'), '', true);
-    wp_enqueue_script('bootstrap', BUSICARE_TEMPLATE_DIR_URI . '/js/bootstrap' . $suffix . '.js', array('jquery'), '', true);
+    wp_enqueue_script('bootstrap', BUSICARE_TEMPLATE_DIR_URI . '/js/bootstrap.bundle' . $suffix . '.js', array('jquery'), '5.3.6', true);
     wp_enqueue_script('jquery-menu', BUSICARE_TEMPLATE_DIR_URI . '/js/smartmenus/jquery.smartmenus.js', array('jquery'), '', true);
     wp_enqueue_script('jquery-menu-bootstrap', BUSICARE_TEMPLATE_DIR_URI . '/js/smartmenus/jquery.smartmenus.bootstrap-4.js', array('jquery'), '', true);
 

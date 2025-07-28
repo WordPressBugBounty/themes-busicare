@@ -518,3 +518,5 @@ input[type="text"]:focus, input[type="email"]:focus, input[type="url"]:focus, in
 .dropdown-menu li.active a{color:#22a2c4; }
 .dropdown-menu li.active ul li.active a{color: #22a2c4;}
 .dropdown-menu li.active ul li a:hover{color: #22a2c4;}
+.five .search-box-outer .dropdown-menu{border-color: #22a2c4;}
+#testimonial-carousel2 .testmonial-block, .page-template-template-testimonial-5 .testmonial-block { border-color: #22a2c4;}

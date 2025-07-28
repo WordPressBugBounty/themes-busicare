@@ -151,9 +151,9 @@
 				$(document).off('keydown.bs.dropdown.data-api', '.dropdown-menu');
 				// restore BS keydown handler for dropdowns that are not inside SmartMenus navbars
 				// SmartMenus won't add the "show" class so it's handy here
-				if ($.fn.dropdown && $.fn.dropdown.Constructor) {
-					$(document).on('keydown.bs.dropdown.data-api', '.dropdown-menu.show', $.fn.dropdown.Constructor._dataApiKeydownHandler);
-				}
+				if ($.fn.dropdown && $.fn.dropdown.Constructor && $.fn.dropdown.Constructor._dataApiKeydownHandler) {
+		            $(document).on('keydown.bs.dropdown.data-api', '.dropdown-menu.show', $.fn.dropdown.Constructor._dataApiKeydownHandler);
+	             }
 				$.SmartMenus.Bootstrap.keydownFix = true;
 			}
 		}

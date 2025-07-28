@@ -1,5 +1,5 @@
 <?php if( !is_attachment() ): ?>
-   <article class="blog-author media">
+   <article class="blog-author media d-flex">
       <figure class="avatar">
          <?php echo get_avatar( $post->post_author , 250 ); ?>
    	</figure>
