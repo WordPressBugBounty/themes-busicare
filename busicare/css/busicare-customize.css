@@ -95,3 +95,8 @@
 .customize-control-radio {
     padding: 0;
 }
+.busicare-features-customizer .busicare-button {
+    width: 95%;
+    text-align: center;
+    letter-spacing: .2px;
+}

@@ -234,3 +234,27 @@ function busicare_register_required_plugins() {
 }
 add_action( 'tgmpa_register', 'busicare_register_required_plugins' );
 endif;
+
+//Edit link 
+if (!function_exists('busicare_edit_link')) :
+    function busicare_edit_link($view = 'default')
+    {
+        global $post;
+            edit_post_link(
+                sprintf(
+                    wp_kses(
+                    /* translators: %s: Name of current post. Only visible to screen readers */
+                        __('Edit <span class="screen-reader-text">%s</span>', 'busicare'),
+                        array(
+                            'span' => array(
+                                'class' => array(),
+                            ),
+                        )
+                    ),
+                    get_the_title()
+                ),
+                '<span class="edit-link"><i class="fa fa-edit"></i>',
+                '</span>'
+            );
+    } 
+endif;

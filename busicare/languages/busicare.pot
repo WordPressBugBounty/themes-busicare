@@ -2,7 +2,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: Busicare\n"
-"POT-Creation-Date: 2025-07-23 16:37+0530\n"
+"POT-Creation-Date: 2026-02-17 13:28+0530\n"
 "PO-Revision-Date: 2019-04-03 17:38+0530\n"
 "Last-Translator: \n"
 "Language-Team: \n"
@@ -10,14 +10,13 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=INTEGER; plural=EXPRESSION;\n"
-"X-Generator: Poedit 3.5\n"
+"X-Generator: Poedit 3.8\n"
 "X-Poedit-Basepath: ..\n"
 "X-Poedit-Flags-xgettext: --add-comments=translators:\n"
 "X-Poedit-WPHeader: style.css\n"
 "X-Poedit-SourceCharset: UTF-8\n"
-"X-Poedit-KeywordsList: __;_e;_n:1,2;_x:1,2c;_ex:1,2c;_nx:4c,1,2;esc_attr__;"
-"esc_attr_e;esc_attr_x:1,2c;esc_html__;esc_html_e;esc_html_x:1,2c;_n_noop:1,2;"
-"_nx_noop:3c,1,2;__ngettext_noop:1,2\n"
+"X-Poedit-KeywordsList: "
+"__;_e;_n:1,2;_x:1,2c;_ex:1,2c;_nx:4c,1,2;esc_attr__;esc_attr_e;esc_attr_x:1,2c;esc_html__;esc_html_e;esc_html_x:1,2c;_n_noop:1,2;_nx_noop:3c,1,2;__ngettext_noop:1,2\n"
 "X-Poedit-SearchPath-0: .\n"
 "X-Poedit-SearchPathExcluded-0: *.js\n"
 
@@ -811,6 +810,12 @@ msgstr ""
 msgid "Read More"
 msgstr ""
 
+#. translators: %s: Name of current post. Only visible to screen readers
+#: functions.php:247
+#, php-format
+msgid "Edit <span class=\"screen-reader-text\">%s</span>"
+msgstr ""
+
 #: header.php:30
 msgid "Skip to content"
 msgstr ""
@@ -1537,17 +1542,7 @@ msgctxt "placeholder"
 msgid "Search"
 msgstr ""
 
-#: taxonomy-portfolio_categories.php:3
-msgid "Portfolio Category Title"
-msgstr ""
-
-#: taxonomy-portfolio_categories.php:4
-msgid ""
-"Morbi facilisis, ipsum ut ullamcorper venenatis, nisi diam placerat turpis, "
-"at auctor nisi magna cursus arcu."
-msgstr ""
-
-#: template-business.php:32
+#: template-business.php:34
 msgid ""
 "This template shows the homepage sections, and to show these sections you "
 "have to activate the companion plugin."

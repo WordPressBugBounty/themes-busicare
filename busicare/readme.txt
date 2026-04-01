@@ -2,8 +2,8 @@
 
 Contributors: spicethemes
 Requires at least: 4.5
-Tested up to: 6.8
-Stable tag: 1.3.4.1
+Tested up to: 6.9
+Stable tag: 1.3.4.2
 Requires PHP: 5.4
 License: GNU General Public License v2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
@@ -28,10 +28,13 @@ In WordPress 5.8, the default widget title is showing in the H2 tag if you want 
 
 == License ==
 
-BusiCare WordPress Theme, Copyright (C) 2021-2025, SpiceThemes
+BusiCare WordPress Theme, Copyright (C) 2021-2026, SpiceThemes
 BusiCare is WordPress Theme distributed under the terms of the GNU GPL
 
 == Changelog ==
+
+@Version 1.3.4.2
+* Added gutenberg editor section funtionality on business template.
 
 @Version 1.3.4.1
 * Corrected design of the slider contact form and search light box in PRO.
@@ -173,4 +176,4 @@ https://pxhere.com/en/photo/1046490
 https://pxhere.com/en/photo/549603
 
 * Images on /assets/images folder
-Copyright (C) 2021-2025, SpiceThemes and available as [GPLv2](https://www.gnu.org/licenses/gpl-2.0.html)
+Copyright (C) 2021-2026, SpiceThemes and available as [GPLv2](https://www.gnu.org/licenses/gpl-2.0.html)

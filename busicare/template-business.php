@@ -12,6 +12,8 @@ if ( ! function_exists( 'busicarep_activate' ) ):
 	if ( function_exists( 'spiceb_activate' ) ):
 		$theme = wp_get_theme();
 		do_action( 'spiceb_busicare_slider_action' , false);
+		the_content();
+        busicare_edit_link();
 		do_action( 'spiceb_busicare_services_action', false);
 		if ($theme->name == 'BusiCare') 
     	{
@@ -40,7 +42,9 @@ endif;
 if ( function_exists( 'busicarep_activate' ) ):
 		$busicare_front_page = get_theme_mod('front_page_data','cta1,services,cta2,portfolio,fun,news,testimonial,wooproduct,team,client');
 		do_action( 'busicare_plus_before_slider_section_hook', false);
-		do_action( 'busicare_plus_slider_action' , false);		
+		do_action( 'busicare_plus_slider_action' , false);	
+		the_content();
+        busicare_edit_link();	
 		do_action( 'busicare_plus_after_slider_section_hook', false);
 	    
 	    $busicare_data =is_array($busicare_front_page) ? $busicare_front_page : explode(",",$busicare_front_page);			
