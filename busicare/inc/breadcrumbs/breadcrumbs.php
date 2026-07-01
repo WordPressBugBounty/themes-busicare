@@ -64,7 +64,7 @@ if( !function_exists('busicare_breadcrumbs') ):
 								}
 								else if(is_category())
 								{
-									echo '<h1>'. ( esc_html__('Category','busicare') . ': ' . single_cat_title( '', false ) ) .'</h1>';		
+									echo '<h1>'. single_cat_title( '', false )  .'</h1>';		
 								}
 								else if ( !is_single() && !is_page() && get_post_type() != 'post' && !is_404() )
 								{ 
@@ -79,7 +79,7 @@ if( !function_exists('busicare_breadcrumbs') ):
 		                		}
 		                		elseif( is_tag() )
 		                		{
-		                			echo '<h1>'. ( esc_html__('Tag','busicare') . ': ' . single_tag_title( '', false ) ) .'</h1>';
+		                			echo '<h1>'. single_tag_title( '', false )  .'</h1>';
 		                		}
 		                		else if(is_archive())
 								{	

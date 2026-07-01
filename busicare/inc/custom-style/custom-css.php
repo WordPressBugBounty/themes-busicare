@@ -533,6 +533,8 @@ function busicare_custom_light() {
             .navbar .nav .nav-item.html a:hover{color: <?php echo esc_attr($link_color); ?>;}
             .dark .navbar.navbar5 .nav .dropdown-menu .text-dark {color:<?php echo esc_attr($link_color); ?> !important; }
             .hp-preloader-cube .hp-cube:before {background: <?php echo esc_attr($link_color); ?>;}
+            .bs-pagination-single.bs-pagi-design .bs-post-content a:hover{color: <?php echo esc_attr($link_color); ?>;}
+            .bs-pagi-design a.bs_prvs_arrow i:hover, .bs-pagi-design a.bs_nxt_arrow i:hover {background-color:<?php echo esc_attr($link_color); ?>;}
         </style>
         <?php
     endif;

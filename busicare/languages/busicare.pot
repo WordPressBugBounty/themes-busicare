@@ -2,7 +2,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: Busicare\n"
-"POT-Creation-Date: 2026-02-17 13:28+0530\n"
+"POT-Creation-Date: 2026-05-05 13:37+0530\n"
 "PO-Revision-Date: 2019-04-03 17:38+0530\n"
 "Last-Translator: \n"
 "Language-Team: \n"
@@ -274,7 +274,7 @@ msgid "Site Logo"
 msgstr ""
 
 #: admin/tab-pages/getting-started.php:96
-#: inc/customizer/customizer_sections_settings.php:78
+#: inc/customizer/customizer_sections_settings.php:86
 msgid "Blog Options"
 msgstr ""
 
@@ -806,14 +806,35 @@ msgstr ""
 msgid "Primary Menu"
 msgstr ""
 
-#: functions.php:137 template-parts/content-search.php:33
+#: functions.php:147 template-parts/content-search.php:33
 msgid "Read More"
 msgstr ""
 
 #. translators: %s: Name of current post. Only visible to screen readers
-#: functions.php:247
+#: functions.php:257
 #, php-format
 msgid "Edit <span class=\"screen-reader-text\">%s</span>"
+msgstr ""
+
+#: functions.php:295
+msgid "Previous post arrow"
+msgstr ""
+
+#: functions.php:298
+msgid "Previous post"
+msgstr ""
+
+#: functions.php:320
+msgid "Next post"
+msgstr ""
+
+#: functions.php:325
+msgid "Next post arrow"
+msgstr ""
+
+#: functions.php:339 functions.php:368
+#: inc/customizer/single-blog-options.php:99
+msgid "Related Posts"
 msgstr ""
 
 #: header.php:30
@@ -823,14 +844,6 @@ msgstr ""
 #: inc/breadcrumbs/breadcrumbs.php:38 inc/customizer/blog-page-options.php:12
 #: inc/menu/default_menu_walker.php:17
 msgid "Home"
-msgstr ""
-
-#: inc/breadcrumbs/breadcrumbs.php:67 inc/customizer/blog-options.php:62
-msgid "Category"
-msgstr ""
-
-#: inc/breadcrumbs/breadcrumbs.php:82
-msgid "Tag"
 msgstr ""
 
 #: inc/customizer/blog-options.php:13
@@ -855,6 +868,10 @@ msgstr ""
 
 #: inc/customizer/blog-options.php:61
 msgid "Author"
+msgstr ""
+
+#: inc/customizer/blog-options.php:62
+msgid "Category"
 msgstr ""
 
 #: inc/customizer/blog-options.php:74
@@ -1487,11 +1504,19 @@ msgstr ""
 msgid "Hide/Show Tag"
 msgstr ""
 
-#: inc/customizer/single-blog-options.php:86
+#: inc/customizer/single-blog-options.php:88
+msgid "Hide/Show Related Post"
+msgstr ""
+
+#: inc/customizer/single-blog-options.php:105
+msgid "Related Post Title"
+msgstr ""
+
+#: inc/customizer/single-blog-options.php:122
 msgid "Hide/Show Author Details"
 msgstr ""
 
-#: inc/customizer/single-blog-options.php:103
+#: inc/customizer/single-blog-options.php:139
 msgid "Logo Width"
 msgstr ""
 

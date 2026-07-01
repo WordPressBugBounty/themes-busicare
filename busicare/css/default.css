@@ -520,3 +520,5 @@ input[type="text"]:focus, input[type="email"]:focus, input[type="url"]:focus, in
 .dropdown-menu li.active ul li a:hover{color: #22a2c4;}
 .five .search-box-outer .dropdown-menu{border-color: #22a2c4;}
 #testimonial-carousel2 .testmonial-block, .page-template-template-testimonial-5 .testmonial-block { border-color: #22a2c4;}
+.bs-pagination-single.bs-pagi-design .bs-post-content a:hover{color: #22a2c4;}
+.bs-pagi-design a.bs_prvs_arrow i:hover, .bs-pagi-design a.bs_nxt_arrow i:hover {background-color:#22a2c4;}

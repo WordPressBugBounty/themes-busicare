@@ -77,6 +77,16 @@ if (!function_exists('busicare_theme_setup')) :
             'busicare-primary' => esc_html__('Primary Menu', 'busicare')
         ));
 
+        // html5 support
+        add_theme_support( 'html5', array(
+            'search-form',
+            'comment-form',
+            'comment-list',
+            'gallery',
+            'caption',
+            'script',
+            'style'
+        ) );
 
         // woocommerce support
         add_theme_support('woocommerce');
@@ -258,3 +268,145 @@ if (!function_exists('busicare_edit_link')) :
             );
     } 
 endif;
+
+
+/* ---------------------------------------------- /*
+ * Single Post Navigation
+/* ---------------------------------------------- */
+
+function busicare_single_posts_nav(){
+
+    $next_post = get_next_post();
+    $prev_post = get_previous_post();
+
+    if(function_exists( 'busicarep_activate' )){
+        $class = "bs-pagination-single bs-pagi-design bs-pro";
+    } else {
+        $class = "bs-pagination-single bs-pagi-design";
+    }
+
+    if ( $next_post || $prev_post ) : ?>
+
+        <!-- Pagination -->       
+        <article class="<?php echo esc_attr($class);?>">
+            <?php if ( ! empty( $prev_post ) ) : ?>
+            <div class="bs-post-previous">
+
+                <a href="<?php echo esc_url(get_permalink( $prev_post )); ?>" class="bs_prvs_arrow" title="<?php esc_attr_e('Previous post arrow','busicare'); ?>"><i class="fa-solid fa-arrow-left-long"></i></a>
+
+                <div class="bs-post-content">
+                    <a class="bs_prvs_post" href="<?php echo esc_url(get_permalink( $prev_post )); ?>" title="<?php esc_attr_e('Previous post','busicare'); ?>"><?php esc_html_e('Previous post','busicare');?></a>
+                    <h4 class="bs-entry-title">
+                    <a class="bs-title" href="<?php echo esc_url(get_permalink( $prev_post )); ?>" title="<?php echo esc_attr(get_the_title( $prev_post )); ?>"><?php echo esc_html(get_the_title( $prev_post )); ?></a>
+                    </h4>
+                </div>
+                <?php if(function_exists( 'busicarep_activate' )){ 
+                 if ( get_the_post_thumbnail( $prev_post ) ) : ?>
+                    <figure class="bs-post-thumbnail">
+                        <?php echo wp_kses_post( get_the_post_thumbnail( $prev_post->ID, 'full', array('class' => 'img-fluid') ) ); ?>
+                    </figure>
+                <?php endif;  } ?>
+            </div>
+            <?php endif; 
+            if ( ! empty( $next_post ) ) : ?>
+            <div class="bs-post-next">
+                <?php if(function_exists( 'busicarep_activate' )){ 
+                 if ( get_the_post_thumbnail( $next_post ) ) : ?>
+                    <figure class="bs-post-thumbnail">
+                        <?php echo wp_kses_post( get_the_post_thumbnail( $next_post->ID, 'full', array('class' => 'img-fluid') ) ); ?>
+                    </figure>
+                <?php endif;  } ?>
+                 <div class="bs-post-content">
+                    <a class="bs_nxt_post" href="<?php echo esc_url(get_permalink( $next_post )); ?>" title="<?php esc_attr_e('Next post','busicare'); ?>"><?php esc_html_e('Next post','busicare');?></a>
+                    <h4 class="bs-entry-title">
+                        <a class="bs-title" href="<?php echo esc_url(get_permalink( $next_post )); ?>" title="<?php echo esc_attr(get_the_title( $next_post )); ?>"><?php echo esc_html(get_the_title( $next_post )); ?></a>
+                    </h4>
+                </div>
+                <a href="<?php echo esc_url(get_permalink( $next_post )); ?>" class="bs_nxt_arrow" title="<?php esc_attr_e('Next post arrow','busicare'); ?>"><i class="fa-solid fa-arrow-right-long"></i></a>
+            </div>
+            <?php endif; ?>
+        </article>
+      <!-- /Pagination -->       
+    <?php endif;
+}
+
+/* =============================================================
+    *                    Related Post
+  ================================================================ */
+
+function busicare_single_post_related() {
+
+    $busicare_related_post_title = get_theme_mod('busicare_related_post_title',__('Related Posts','busicare'));
+
+    if(get_theme_mod('busicare_enable_related_post',true) == true):
+
+    // Get the current post's ID
+    $current_post_id = get_the_ID();
+    // Get the categories of the current post
+    $categories = get_the_category($current_post_id);
+    if ($categories!=null) {
+        $category_ids = array();
+        foreach ($categories as $category) {
+            $category_ids[] = $category->term_id;
+        }
+    }
+    
+    $args = array(
+        'ignore_sticky_posts' => 1,
+        'post__not_in' => array($current_post_id), // Exclude the current post
+        'category__in' => $category_ids, // Include posts from the same categories
+        'posts_per_page' => 3,
+    );
+
+    $query_args = new WP_Query($args); 
+    if ($query_args->have_posts())  { ?>
+
+<article class="related-posts bs-design">
+   <?php
+   if(!empty($busicare_related_post_title)):?>
+   <div class="comment-title">
+      <h3><?php echo esc_html(get_theme_mod('busicare_related_post_title',__('Related Posts','busicare')));?></h3>
+   </div>
+<?php endif;?>
+
+   <div class="row">
+         <?php
+
+         while ($query_args->have_posts()) : $query_args->the_post(); ?>
+
+         <div class="col-lg-4 col-md-6 col-sm-12">
+            <article class="post">
+               <figure class="post-thumbnail">
+                   <?php
+                        if(has_post_thumbnail()):?>
+                        <a href="<?php the_permalink();?>"><?php the_post_thumbnail('full',array('class'=>'img-fluid'));?></a>
+                     <?php endif;?>                   
+                </figure>
+                <div class="post-content">
+                    <div class="entry-date ">
+                        <a href="<?php echo esc_url( home_url('/') ); ?>/<?php echo esc_html(date( 'Y/m' , strtotime( get_the_date() )) ); ?>"><time><?php echo esc_html(get_the_date()); ?></time>
+                        </a>
+                    </div>
+                    <header class="entry-header">
+                        <h4 class="entry-title"><a href="<?php the_permalink();?>"><?php the_title();?></a></h4>
+                    </header>
+                  <?php
+                  if(has_category()):?>
+                    <div class="entry-meta">
+                        <span class="cat-links">
+                            <?php the_category( ', ' );?>
+                        </span>
+                    </div>
+               <?php endif;?>
+                 
+               </div>
+            </article>
+         </div>
+         <?php endwhile;  wp_reset_postdata();?>
+     
+   </div>
+</article>
+<?php }
+ endif;
+}
+add_action('busicare_single_post_hook','busicare_single_post_related');

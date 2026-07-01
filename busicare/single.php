@@ -33,10 +33,15 @@ else {
 				while(have_posts()): the_post();
 					get_template_part('template-parts/content','single');	
 				endwhile;
+
+				busicare_single_posts_nav(); 
+				
 				if(function_exists( 'busicarep_activate' )):
 					if(get_theme_mod('busicare_enable_related_post',true )===true ):
 						include(BUSICAREP_PLUGIN_DIR.'/inc/template-parts/related-posts.php');
 					endif;
+				else: 
+					do_action('busicare_single_post_hook');	
 				endif;
 				if(get_theme_mod('busicare_enable_single_post_admin_details',true)===true):
 					get_template_part('template-parts/auth-details');

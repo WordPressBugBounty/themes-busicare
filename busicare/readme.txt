@@ -3,7 +3,7 @@
 Contributors: spicethemes
 Requires at least: 4.5
 Tested up to: 6.9
-Stable tag: 1.3.4.2
+Stable tag: 1.3.4.3
 Requires PHP: 5.4
 License: GNU General Public License v2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
@@ -32,6 +32,9 @@ BusiCare WordPress Theme, Copyright (C) 2021-2026, SpiceThemes
 BusiCare is WordPress Theme distributed under the terms of the GNU GPL
 
 == Changelog ==
+
+@Version 1.3.4.3
+* Added post navigation and related post section in single post.
 
 @Version 1.3.4.2
 * Added gutenberg editor section funtionality on business template.

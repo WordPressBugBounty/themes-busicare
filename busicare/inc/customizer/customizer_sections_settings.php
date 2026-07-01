@@ -35,6 +35,14 @@ function busicare_theme_option($wp_customize) {
         return ( array_key_exists($input, $choices) ? $input : $setting->default );
     }
 
+    function busicare_rt_post_callback($control) {
+        if (true == $control->manager->get_setting('busicare_enable_related_post')->value()) {
+            return true;
+        } else {
+            return false;
+        }
+    }
+
     if (!function_exists('busicare_sanitize_number_range')) :
 
         /**
@@ -73,7 +81,7 @@ function busicare_theme_option($wp_customize) {
 
     $wp_customize->add_panel('busicare_theme_panel',
             array(
-                'priority' => 2,
+                'priority' => 112,
                 'capability' => 'edit_theme_options',
                 'title' => esc_html__('Blog Options', 'busicare')
             )

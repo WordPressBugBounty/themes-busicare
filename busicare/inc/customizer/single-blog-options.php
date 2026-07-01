@@ -75,6 +75,42 @@ function busicare_single_blog_customizer($wp_customize) {
                 'priority' => 8,
                     )
     ));
+
+
+       $wp_customize->add_setting('busicare_enable_related_post',
+            array(
+                'default' => true,
+                'sanitize_callback' => 'busicare_sanitize_checkbox',
+            )
+    );
+    $wp_customize->add_control(new Busicare_Toggle_Control($wp_customize, 'busicare_enable_related_post',
+                    array(
+                'label' => esc_html__('Hide/Show Related Post', 'busicare'),
+                'type' => 'toggle',
+                'section' => 'busicare_single_blog_section',
+                'priority' => 9,
+                    )
+    ));
+
+    /*     * *********************** Related Post Title  ******************************** */
+
+    $wp_customize->add_setting('busicare_related_post_title',
+            array(
+                'default' => esc_html__('Related Posts', 'busicare'),
+                'sanitize_callback' => 'sanitize_text_field',
+            )
+    );
+    $wp_customize->add_control('busicare_related_post_title',
+            array(
+                'label' => esc_html__('Related Post Title', 'busicare'),
+                'type' => 'text',
+                'section' => 'busicare_single_blog_section',
+                'priority' =>10 ,
+                'active_callback' => 'busicare_rt_post_callback',
+            )
+    );
+
+
     $wp_customize->add_setting('busicare_enable_single_post_admin_details',
             array(
                 'default' => true,
@@ -86,7 +122,7 @@ function busicare_single_blog_customizer($wp_customize) {
                 'label' => esc_html__('Hide/Show Author Details', 'busicare'),
                 'type' => 'toggle',
                 'section' => 'busicare_single_blog_section',
-                'priority' => 9,
+                'priority' => 13,
                     )
     ));
 
