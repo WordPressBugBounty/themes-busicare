@@ -106,6 +106,16 @@ if (!function_exists('busicare_theme_setup')) :
             'flex-height' => true,
             'header-text' => array('site-title', 'site-description'),
         ));
+		 // Custom header.
+	 add_theme_support( 'custom-header', array(
+    'default-image'      => '',
+    'width'              => 0,
+    'height'             => 0,
+    'flex-width'         => true,
+    'flex-height'        => true,
+    'uploads'            => true,
+    'header-text'        => false,
+     ));
 
         //About Theme
         if(!function_exists( 'busicarep_activate' )) :
